@@ -46,11 +46,12 @@ namespace LCDSArtGallery.Areas.Admin.Controllers
                     Text = i.Name,
                     Value = i.Id.ToString()
                 }),
-                ArtistList = _unitOfWork.Artist.GetAll().Select(i => new SelectListItem
+                //DS: change here and retrieve users based on identity Role = Artist
+            /*    ArtistList = _unitOfWork.Artist.GetAll().Select(i => new SelectListItem
                 {
                     Text = i.FirstName,
                     Value = i.Id.ToString()
-                })
+                })*/
             };
             if (id == null)
             {
@@ -132,11 +133,12 @@ namespace LCDSArtGallery.Areas.Admin.Controllers
                     Text = i.Name,
                     Value = i.Id.ToString()
                 });
-                productVM.ArtistList = _unitOfWork.Artist.GetAll().Select(i => new SelectListItem
+                //change here and retrieve user with role Artist
+             /*   productVM.ArtistList = _unitOfWork.Artist.GetAll().Select(i => new SelectListItem
                 {
                     Text = i.FirstName,
                     Value = i.Id.ToString()
-                });
+                });*/
                 if (productVM.Product.Id != 0)
                 {
                     productVM.Product = _unitOfWork.Product.Get(productVM.Product.Id);

@@ -22,9 +22,6 @@ namespace LCDSArtGallery.Models
         [ForeignKey("ProductTypeId")]
         [ValidateNever]
         public ProductType ProductType { get; set; }
-        public int ArtistId { get; set; }
-        [ForeignKey("ArtistId")]
-        [ValidateNever]
-        public Artist Artist { get; set; }
+      
     }
 }

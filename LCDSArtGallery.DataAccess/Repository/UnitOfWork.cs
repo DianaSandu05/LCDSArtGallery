@@ -15,7 +15,7 @@ namespace LCDSArtGallery.DataAccess.Repository
             _db = db;
             //initialize repositories
             ProductType = new ProductTypeRepository(_db);
-            Artist = new ArtistRepository(_db);
+          
             Product = new ProductRepository(_db);
             OrderDetails = new OrderDetailsRepository(_db);
             ApplicationUser = new ApplicationUserRepository(_db);
@@ -26,7 +26,7 @@ namespace LCDSArtGallery.DataAccess.Repository
 
         public IApplicationUserRepository ApplicationUser { get; private set; }
 
-        public IArtistRepository Artist { get; private set; }
+       
         public IProductRepository Product { get; private set; }
         public IProductTypeRepository ProductType { get; private set; }
         public IShoppingCartRepository ShoppingCart { get; private set; }

@@ -8,25 +8,6 @@ namespace LCDSArtGallery.DataAccess.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Artists",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    ContactNumber = table.Column<int>(nullable: false),
-                    Address = table.Column<string>(nullable: true),
-                    Overview = table.Column<string>(nullable: true),
-                    Biography = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Artists", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -234,18 +215,11 @@ namespace LCDSArtGallery.DataAccess.Migrations
                     Description = table.Column<string>(nullable: true),
                     Price = table.Column<double>(nullable: false),
                     ImageUrl = table.Column<string>(nullable: true),
-                    ProductTypeId = table.Column<int>(nullable: false),
-                    ArtistId = table.Column<int>(nullable: false)
+                    ProductTypeId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Products_Artists_ArtistId",
-                        column: x => x.ArtistId,
-                        principalTable: "Artists",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Products_ProductTypes_ProductTypeId",
                         column: x => x.ProductTypeId,
@@ -364,11 +338,6 @@ namespace LCDSArtGallery.DataAccess.Migrations
                 column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_ArtistId",
-                table: "Products",
-                column: "ArtistId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Products_ProductTypeId",
                 table: "Products",
                 column: "ProductTypeId");
@@ -418,9 +387,6 @@ namespace LCDSArtGallery.DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "Artists");
 
             migrationBuilder.DropTable(
                 name: "ProductTypes");

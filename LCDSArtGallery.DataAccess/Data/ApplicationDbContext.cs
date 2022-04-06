@@ -14,7 +14,7 @@ namespace LCDSArtGalleryWeb.DataAccess.Data
         {
         }
         public DbSet<ProductType> ProductTypes { get; set; }
-        public DbSet<Artist> Artists { get; set; }
+     
         public DbSet<Product> Products { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<OrderHeader> OrderHeaders { get; set; }
