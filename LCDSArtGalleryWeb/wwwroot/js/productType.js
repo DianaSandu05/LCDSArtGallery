@@ -11,21 +11,23 @@ function loadDataTable() {
             "url": "/Admin/ProductType/GetAll"
         },
         "columns": [
-            { "data": "name", "width": "60%" },
+            { "data": "name", "width": "70%" },
             {
                 "data": "id",
                 "render": function (data) {
                     return `
                             <div class="text-center">
-                                <a href="/Admin/ProductType/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer">
-                                    <i class="fas fa-edit"></i> 
+                                <a href="/Admin/ProductType/Upsert/${data}" class="btn btn-success text-white px-4" style="cursor:pointer">
+                                    <i class="fa fa-edit"></i>
+                                Edit
                                 </a>
                                 <a onclick=Delete("/Admin/ProductType/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer">
-                                    <i class="fas fa-trash-alt"></i> 
+                                    <i class="fa fa-trash"></i>
+                                Delete
                                 </a>
                             </div>
                            `;
-                }, "width": "40%"
+                }, "width": "30%"
             }
         ]
     });

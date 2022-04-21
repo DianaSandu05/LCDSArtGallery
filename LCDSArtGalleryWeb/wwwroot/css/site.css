@@ -1,8 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-img {
-    height: 200px;
-}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -10,24 +8,32 @@ a.navbar-brand {
 }
 
 /* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+.nav-item a {
+    font-family: Roboto;
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
-/* remove bhrugen
-    .btn-primary {
-  color: #fff;
-  background-color: #2c3e50;
-  border-color: #1861ac;
+
+.carousel img {
+    height: 700px;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  
-  /*background-color: #1b6ec2;*/
-  background-color: #2c3e50;
-  border-color: #1861ac;
-}*/
+.card {
+    margin-top: 100px;
+    border: none;
+}
+
+.card-img-top {
+    margin: 20px;
+}
+
+.card-footer {
+    border: none;
+    background: white;
+}
+
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -63,16 +69,15 @@ html {
   min-height: 100%;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
 .footer {
-  position: absolute;
+  background-color: white;
   bottom: 0;
   width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  padding: 8px;
+}
+
+.bi-search {
+    margin-right: 10px;
 }
 
 
@@ -196,4 +201,104 @@ body {
 .form-signup .social-login {
     width: 210px !important;
     margin: 0 auto;
+}
+
+
+/* Cards Style */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/*Flexbox Cards*/
+.cards {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.card-item {
+    display: flex;
+    width: 100%;
+    padding: 0.5em;
+}
+
+/* ===== == = === 37.5em (600px) === = == ===== */
+@media all and (min-width: 37.5em) {
+    .card-item {
+        width: calc(100% / 12 * 6 );
+    }
+}
+/* ===== == = === 56.25em (900px) === = == ===== */
+@media all and (min-width: 56.25em) {
+    .card-item {
+        width: calc(100% / 12 * 4 );
+    }
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0;
+    background-color: #F8FFF8;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+    .card-body p {
+        margin: 0;
+    }
+
+.card-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 3px 3px 0 0;
+}
+
+    .card-img:hover {
+        opacity: 0.8;
+    }
+
+.btn1 {
+    display: inline-block;
+    margin: 1rem;
+    padding: .75rem 1.25rem;
+    font: 700 1rem/1.2 Verdana, sans-serif;
+    letter-spacing: .05rem;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(77,77,77,.5);
+    background: #1E90FF;
+    border-radius: .25rem;
+    box-shadow: 0 0 1px 1px rgba(77,77,77,.5);
+    color: floralwhite;
+    cursor: pointer;
+    transition: .5s;
+}
+
+    .btn1:hover {
+        background: #ADD8E6;
+        color: #333;
+    }
+
+    .search-button {
+        display: inline-block;
+        margin: auto 20px;
+    }
+
+.search {
+    background-color: white;
+    font-size: 16px !important;
+    border-radius: 4px;
+    border-color: rgb(45, 135, 69);
+    border-style: solid;
+    color: rgb(45, 135, 69);
+}
+
+.btn-link {
+    font-family: Roboto;
+    font-size: 1.1rem;
+    font-weight: 400;
 }

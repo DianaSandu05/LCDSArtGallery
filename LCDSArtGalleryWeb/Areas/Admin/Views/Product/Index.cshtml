@@ -4,13 +4,13 @@
 }
 
 <br />
-<div class="row">
-    <div class="col-6">
-        <h2 class="text-primary">Product List </h2>
-    </div>
-    <div class="col-6 text-right">
-        <a class="btn btn-primary" asp-action="Upsert"><i class="fas fa-plus"></i> &nbsp; Create New Product</a>
-    </div>
+<div class="d-flex align-items-center justify-content-between">
+        <div>
+            <h2 class="text-primary">Product List </h2>
+        </div>
+        <div>
+            <a class="btn btn-success" asp-action="Upsert"><i class="fa fa-plus"></i> &nbsp; Create New Product</a>
+        </div>
 </div>
 
 <br />
@@ -23,7 +23,6 @@
                 <th>Descrption</th>
                 <th>Price</th>
                 <th>ProductType</th>
-                <th>Artist</th>
                 <th></th>
             </tr>
         </thead>

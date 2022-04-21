@@ -12,25 +12,26 @@ function loadDataTable() {
         },
         "columns": [
             { "data": "name", "width": "10%" },
-            { "data": "size", "width": "5%" },
-            { "data": "description", "width": "25%" },
+            { "data": "size", "width": "10%" },
+            { "data": "description", "width": "40%" },
             { "data": "price", "width": "5%" },
-            { "data": "productType.name", "width": "5%" },
-            { "data": "artist.name", "width": "5%" },
+            { "data": "productType.name", "width": "10%" },
             {
                 "data": "id",
                 "render": function (data) {
                     return `
                             <div class="text-center">
                                 <a href="/Admin/Product/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer">
-                                    <i class="fas fa-edit"></i> 
+                                    <i class="fa fa-edit"></i>
+                                Edit
                                 </a>
                                 <a onclick=Delete("/Admin/Product/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer">
-                                    <i class="fas fa-trash-alt"></i> 
+                                    <i class="fa fa-trash"></i>
+                                Delete
                                 </a>
                             </div>
                            `;
-                }, "width": "10%"
+                }, "width": "25%"
             }
         ]
     });
