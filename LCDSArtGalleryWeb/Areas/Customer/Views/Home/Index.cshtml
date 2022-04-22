@@ -11,22 +11,25 @@
             <div class="carousel-item active carousel-image">
               <img class="d-block w-100" src="~/images/home/carousel.jpg" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
+                    <h5>Explore Artworks at the LCDS Art Gallery </h5>
+                    <p>LCDS Art Gallery is a contemporary fine art gallery located in major cities in the United States and Europe.
+                        With the belief that art is a universal language that bridges cultures and forms human connections, 
+                        we strive to create unforgettable exhibitions and events that bring color and inspiration to life’s every moment.</p>
                 </div>
             </div>
             <div class="carousel-item carousel-image">
               <img class="d-block w-100" src="~/images/home/carousel1.jpg" alt="Second slide">
                   <div class="carousel-caption d-none d-md-block">
-                      <h5>...</h5>
+                     <h5>...</h5>
                       <p>...</p>
                   </div>
             </div>
             <div class="carousel-item carousel-image">
               <img class="d-block w-100" src="~/images/home/carousel2.jpg" alt="Third slide">
                   <div class="carousel-caption d-none d-md-block">
-                      <h5>...</h5>
-                      <p>...</p>
+                       <h5>A Vibrant World of Contemporary Art</h5>
+                      <p>LCDS Gallery represents brilliant contemporary artists worldwide, displaying their art in breathtaking
+                    galleries in some of the top premium locations around the world</p>          
                   </div>
             </div>
           </div>
@@ -41,41 +44,7 @@
         </div>
     </div>
 
-@*    <div class="card-group py-4 justify-content-between">
-      <div class="card">
-        <img class="card-img-top" src="~/images/home/carousel3.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card-footer">
-          <button type="button" class="btn btn-outline-primary">Primary</button>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="~/images/home/carousel4.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-          <button type="button" class="btn btn-outline-primary">Primary</button>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="~/images/home/carousel2.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        </div>
-        <div class="card-footer">
-          <button type="button" class="btn btn-outline-primary">Primary</button>
-        </div>
-      </div>
-    </div>
 
-
-*@
 	<div class="cards pt-4 mt-4">
          @foreach (var product in Model)
         {
@@ -85,6 +54,7 @@
                  <div class="d-flex align-items-center justify-content-around py-3">
 				<h2 class="card-title center">@product.Name</h2>
                 <p class="text-justify text-right">Price:$@product.Price.ToString("0.00")</p>
+               
                 </div>
                     <p class="text-center">@product.Description</p>
 				<div class="center" style="margin: 0 auto;">

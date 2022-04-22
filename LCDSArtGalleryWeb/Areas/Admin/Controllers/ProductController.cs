@@ -146,6 +146,26 @@ namespace LCDSArtGallery.Areas.Admin.Controllers
             }
             return View(productVM);
         }
+        //Grouping - DS
+        /* TO DO:
+         1. Display all products and include product type
+         3. Check if product type (FK) contains "OIL"
+         4. Display all products from oil category
+         5. return all products and reference in the view
+         */
+        public IActionResult GroupingOil(int? id)
+        {
+
+            var products = from p in _unitOfWork.Product.GetAll(includeProperties:"ProductType")
+                           select p;
+            if (products != null)
+            {
+                products = products.Where(p => p.ProductType.Name.ToUpper() == "Oil".ToUpper()
+                                      );
+            }
+         
+            return View(products);
+        }
          public ViewResult SearchProduct(int? id, string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
@@ -167,7 +187,8 @@ namespace LCDSArtGallery.Areas.Admin.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 products = products.Where(p => p.Name.ToUpper().Contains(searchString.ToUpper())
-                                       || p.Description.ToUpper().Contains(searchString.ToUpper()));
+                                       || p.Description.ToUpper().Contains(searchString.ToUpper())
+                                       );
             }
             switch (sortOrder)
             {
@@ -185,7 +206,7 @@ namespace LCDSArtGallery.Areas.Admin.Controllers
                     break;
             }
 
-            int pageSize = 3;
+            int pageSize = 100;
             int pageNumber = (page ?? 1);
             return View(products.ToPagedList(pageNumber, pageSize));
             var productList = _unitOfWork.Product.GetFirstOrDefault(i => i.Id == id);
